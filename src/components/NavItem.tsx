@@ -1,19 +1,16 @@
-import { PointerContext } from "@/contexts/pointer";
-import { FC, HTMLAttributes, useContext } from "react";
+import { FC, HTMLAttributes } from "react";
+
+import { pointerHoverableHOC } from "./Pointer";
 
 interface Props extends HTMLAttributes<HTMLLIElement> {
   active?: boolean;
 }
 
-const NavItem: FC<Props> = ({ children, active, ...props }) => {
-  const { setHoveringLink } = useContext(PointerContext);
-
+const NavItem: FC<Props> = ({ children, active = false, ...props }) => {
   return (
     <li
       className="group relative list-none text-2xl cursor-pointer w-fit transition-all"
       {...props}
-      onMouseEnter={() => setHoveringLink(true)}
-      onMouseLeave={() => setHoveringLink(false)}
     >
       <span className="opacity-0">{children}</span>
       {/* Line */}
@@ -38,8 +35,4 @@ const NavItem: FC<Props> = ({ children, active, ...props }) => {
   );
 };
 
-NavItem.defaultProps = {
-  active: false,
-};
-
-export default NavItem;
+export default pointerHoverableHOC(NavItem);

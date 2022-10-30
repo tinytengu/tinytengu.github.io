@@ -1,21 +1,11 @@
-import { AnchorHTMLAttributes, FC, useContext } from "react";
+import { FC, AnchorHTMLAttributes } from "react";
 
-import { PointerContext } from "@/contexts/pointer";
+import { pointerHoverableHOC } from "./Pointer";
 
 interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {}
 
-const Link: FC<Props> = ({ children, ...props }) => {
-  const { setHoveringLink } = useContext(PointerContext);
-
-  return (
-    <a
-      {...props}
-      onMouseEnter={() => setHoveringLink(true)}
-      onMouseLeave={() => setHoveringLink(false)}
-    >
-      {children}
-    </a>
-  );
+const Link: FC<Props> = (props) => {
+  return <a {...props} />;
 };
 
-export default Link;
+export default pointerHoverableHOC(Link);

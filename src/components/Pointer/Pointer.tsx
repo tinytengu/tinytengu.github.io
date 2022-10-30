@@ -8,7 +8,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
   sizeHover?: number;
 }
 
-const Pointer: FC<Props> = ({ size, sizeHover, ...props }) => {
+export const Pointer: FC<Props> = ({ size = 40, sizeHover = 60, ...props }) => {
   const { posX, posY } = useMouse();
   const { hoveringLink } = useContext(PointerContext);
 
@@ -35,10 +35,3 @@ const Pointer: FC<Props> = ({ size, sizeHover, ...props }) => {
     </div>
   );
 };
-
-Pointer.defaultProps = {
-  size: 40,
-  sizeHover: 60,
-};
-
-export default Pointer;
