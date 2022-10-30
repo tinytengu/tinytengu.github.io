@@ -1,11 +1,5 @@
 import { AnimationProps } from "framer-motion";
 
-interface Props {
-  size?: number | string;
-  delay?: number;
-  duration?: number;
-}
-
 export const projectsGridAnimation: AnimationProps = {
   variants: {
     initial: {},

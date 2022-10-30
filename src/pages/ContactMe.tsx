@@ -1,7 +1,6 @@
 import { AnimationProps, motion } from "framer-motion";
 
-import { Footer, Link } from "@/components";
-import { sectionAnimation } from "@/animations";
+import { Footer, Link, Section } from "@/components";
 
 const aboutTextAnimation: AnimationProps = {
   variants: {
@@ -23,10 +22,7 @@ const aboutTextAnimation: AnimationProps = {
 
 const ContectMe = () => {
   return (
-    <motion.section
-      className="absolute w-full h-full flex flex-col gap-8 justify-center items-center"
-      {...sectionAnimation()}
-    >
+    <Section>
       <motion.div
         className="flex flex-col text-2xl font-light px-2 md:px-0 gap-1"
         {...aboutTextAnimation}
@@ -55,7 +51,7 @@ const ContectMe = () => {
         </h2>
       </motion.div>
       <Footer />
-    </motion.section>
+    </Section>
   );
 };
 

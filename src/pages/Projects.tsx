@@ -1,12 +1,8 @@
 import { FC } from "react";
 import { AnimationProps, motion } from "framer-motion";
 
-import { Link, Title } from "@/components";
-import {
-  sectionAnimation,
-  projectsGridAnimation,
-  projectsItemAnimation,
-} from "@/animations";
+import { Link, Section, Title } from "@/components";
+import { projectsGridAnimation, projectsItemAnimation } from "@/animations";
 
 const captionAnimation: AnimationProps = {
   variants: {
@@ -41,10 +37,7 @@ const Projects: FC<Props> = (props) => {
   ];
 
   return (
-    <motion.section
-      className="absolute w-full h-full flex flex-col gap-8 justify-center items-center"
-      {...sectionAnimation()}
-    >
+    <Section>
       <Title>{props.title}</Title>
       <motion.p {...captionAnimation}>
         See more on my{" "}
@@ -68,7 +61,7 @@ const Projects: FC<Props> = (props) => {
           ></motion.div>
         ))}
       </motion.div>
-    </motion.section>
+    </Section>
   );
 };
 

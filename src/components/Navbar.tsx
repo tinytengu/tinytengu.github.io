@@ -8,7 +8,7 @@ interface Props {
   onSelect?: (itemIdx: number) => void;
 }
 
-const Navbar: FC<Props> = ({ itemIdx, items, onSelect }) => {
+const Navbar: FC<Props> = ({ itemIdx = 0, items, onSelect }) => {
   return (
     <ul className="md:flex flex-col gap-2">
       {items.map((item, idx) => (
@@ -22,10 +22,6 @@ const Navbar: FC<Props> = ({ itemIdx, items, onSelect }) => {
       ))}
     </ul>
   );
-};
-
-Navbar.defaultProps = {
-  itemIdx: 0,
 };
 
 export default Navbar;

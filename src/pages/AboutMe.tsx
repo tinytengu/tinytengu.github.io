@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { AnimationProps, motion } from "framer-motion";
 
-import { Title } from "@/components";
+import { Section, Title } from "@/components";
 import { sectionAnimation } from "@/animations";
 import fireGif from "@/assets/fire.gif";
 
@@ -29,10 +29,7 @@ interface Props {
 
 const AboutMe: FC<Props> = (props) => {
   return (
-    <motion.section
-      className="absolute w-full h-full flex flex-col gap-8 justify-center items-center"
-      {...sectionAnimation()}
-    >
+    <Section>
       <Title>{props.title}</Title>
       <motion.div
         className="flex flex-col text-2xl gap-4 font-light text-center px-2 md:px-0"
@@ -68,7 +65,7 @@ const AboutMe: FC<Props> = (props) => {
           , but I only bend my spine when working...
         </p>
       </motion.div>
-    </motion.section>
+    </Section>
   );
 };
 

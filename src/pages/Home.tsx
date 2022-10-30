@@ -1,16 +1,10 @@
-import { motion } from "framer-motion";
-
-import { Title } from "@/components";
-import { sectionAnimation } from "@/animations";
+import { Section, Title } from "@/components";
 
 const Home = () => {
   return (
-    <motion.section
-      className="absolute w-full h-full flex flex-col justify-center items-center"
-      {...sectionAnimation()}
-    >
+    <Section>
       <Title>tinytengu</Title>
-    </motion.section>
+    </Section>
   );
 };
 
