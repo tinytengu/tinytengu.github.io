@@ -61,7 +61,11 @@ const Projects: FC<Props> = (props) => {
         {...projectsGridAnimation}
       >
         {colors.map((color, idx) => (
-          <motion.div className={color} {...projectsItemAnimation}></motion.div>
+          <motion.div
+            key={`${idx}-${color}`}
+            className={color}
+            {...projectsItemAnimation}
+          ></motion.div>
         ))}
       </motion.div>
     </motion.section>
