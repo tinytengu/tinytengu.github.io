@@ -7,7 +7,7 @@
 * {
   margin: 0;
   padding: 0;
-  @apply cursor-none;
+  cursor: none !important;
 
   &::selection {
     color: black;
