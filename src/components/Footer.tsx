@@ -19,14 +19,14 @@ const Footer = () => {
           GitHub
         </Link>
         <Link
-          href="https://github.com/tinytengu"
+          href="https://t.me/ilovethatteacold"
           target="_blank"
           className="hover:bg-white hover:text-black font-medium transition-all duration-500 h-fit"
         >
           Telegram
         </Link>
         <Link
-          href="https://github.com/tinytengu"
+          href="https://vk.com/id241457329"
           target="_blank"
           className="hover:bg-white hover:text-black font-medium transition-all duration-500 h-fit"
         >
